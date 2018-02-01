@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		15428D9720220BCD00CC6448 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9620220BCD00CC6448 /* ViewModel.swift */; };
 		15428D9A20220FB600CC6448 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9920220FB600CC6448 /* RateTableViewCell.swift */; };
+		15428DA22022BEC800CC6448 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15428DA02022BEC800CC6448 /* RxSwift.framework */; };
+		15428DA32022BEC800CC6448 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15428DA12022BEC800CC6448 /* RxCocoa.framework */; };
 		154E8688202103480095DF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E8687202103480095DF85 /* AppDelegate.swift */; };
 		154E868A202103480095DF85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E8689202103480095DF85 /* ViewController.swift */; };
 		154E868D202103480095DF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E868B202103480095DF85 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		15428D9620220BCD00CC6448 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		15428D9920220FB600CC6448 /* RateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		15428DA02022BEC800CC6448 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		15428DA12022BEC800CC6448 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		154E8684202103480095DF85 /* MobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154E8687202103480095DF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154E8689202103480095DF85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15428DA32022BEC800CC6448 /* RxCocoa.framework in Frameworks */,
+				15428DA22022BEC800CC6448 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,10 +52,20 @@
 			path = Currency;
 			sourceTree = "<group>";
 		};
+		15428D9F2022BEB200CC6448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15428DA12022BEC800CC6448 /* RxCocoa.framework */,
+				15428DA02022BEC800CC6448 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		154E867B202103480095DF85 = {
 			isa = PBXGroup;
 			children = (
 				154E8686202103480095DF85 /* MobileChallenge */,
+				15428D9F2022BEB200CC6448 /* Frameworks */,
 				154E8685202103480095DF85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +104,7 @@
 				154E8680202103480095DF85 /* Sources */,
 				154E8681202103480095DF85 /* Frameworks */,
 				154E8682202103480095DF85 /* Resources */,
+				15428DA42022BEF200CC6448 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -144,6 +161,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15428DA42022BEF200CC6448 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		154E8680202103480095DF85 /* Sources */ = {
@@ -291,6 +328,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MobileChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocoapps.MobileChallenge;
@@ -305,6 +346,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MobileChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pocoapps.MobileChallenge;
