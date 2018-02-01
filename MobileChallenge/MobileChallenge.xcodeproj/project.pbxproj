@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		15428D9720220BCD00CC6448 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9620220BCD00CC6448 /* ViewModel.swift */; };
 		15428D9A20220FB600CC6448 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9920220FB600CC6448 /* RateTableViewCell.swift */; };
+		15428D9C202214AD00CC6448 /* RatesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9B202214AD00CC6448 /* RatesType.swift */; };
+		15428D9E202214D600CC6448 /* RatesServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9D202214D600CC6448 /* RatesServiceType.swift */; };
 		15428DA22022BEC800CC6448 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15428DA02022BEC800CC6448 /* RxSwift.framework */; };
 		15428DA32022BEC800CC6448 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15428DA12022BEC800CC6448 /* RxCocoa.framework */; };
+		15428DA72022C05200CC6448 /* RateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428DA62022C05200CC6448 /* RateError.swift */; };
+		15428DAA2022C70300CC6448 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428DA92022C70300CC6448 /* DateFormatters.swift */; };
 		154E8688202103480095DF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E8687202103480095DF85 /* AppDelegate.swift */; };
 		154E868A202103480095DF85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E8689202103480095DF85 /* ViewController.swift */; };
 		154E868D202103480095DF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E868B202103480095DF85 /* Main.storyboard */; };
@@ -21,8 +25,12 @@
 /* Begin PBXFileReference section */
 		15428D9620220BCD00CC6448 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		15428D9920220FB600CC6448 /* RateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		15428D9B202214AD00CC6448 /* RatesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesType.swift; sourceTree = "<group>"; };
+		15428D9D202214D600CC6448 /* RatesServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceType.swift; sourceTree = "<group>"; };
 		15428DA02022BEC800CC6448 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		15428DA12022BEC800CC6448 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		15428DA62022C05200CC6448 /* RateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateError.swift; sourceTree = "<group>"; };
+		15428DA92022C70300CC6448 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		154E8684202103480095DF85 /* MobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154E8687202103480095DF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154E8689202103480095DF85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +56,9 @@
 		15428D9520220BBE00CC6448 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				15428DA62022C05200CC6448 /* RateError.swift */,
+				15428D9B202214AD00CC6448 /* RatesType.swift */,
+				15428D9D202214D600CC6448 /* RatesServiceType.swift */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -59,6 +70,14 @@
 				15428DA02022BEC800CC6448 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15428DA82022C6E600CC6448 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15428DA92022C70300CC6448 /* DateFormatters.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		154E867B202103480095DF85 = {
@@ -81,6 +100,7 @@
 		154E8686202103480095DF85 /* MobileChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				15428DA82022C6E600CC6448 /* Extensions */,
 				15428D9520220BBE00CC6448 /* Currency */,
 				154E8687202103480095DF85 /* AppDelegate.swift */,
 				15428D9920220FB600CC6448 /* RateTableViewCell.swift */,
@@ -188,8 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				154E868A202103480095DF85 /* ViewController.swift in Sources */,
+				15428D9C202214AD00CC6448 /* RatesType.swift in Sources */,
 				15428D9A20220FB600CC6448 /* RateTableViewCell.swift in Sources */,
+				15428D9E202214D600CC6448 /* RatesServiceType.swift in Sources */,
+				15428DAA2022C70300CC6448 /* DateFormatters.swift in Sources */,
 				15428D9720220BCD00CC6448 /* ViewModel.swift in Sources */,
+				15428DA72022C05200CC6448 /* RateError.swift in Sources */,
 				154E8688202103480095DF85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
