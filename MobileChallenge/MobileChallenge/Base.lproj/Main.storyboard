@@ -60,7 +60,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11.11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alt-qX-TxT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11.11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Alt-qX-TxT">
                                                     <rect key="frame" x="5" y="33.5" width="70" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.27629282994923854" green="0.22917911541350305" blue="0.24779201294874639" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -77,12 +77,12 @@
                                             <constraint firstItem="Gr9-Ra-ehf" firstAttribute="centerX" secondItem="R8a-vT-DL7" secondAttribute="centerX" id="gAR-2N-IEK"/>
                                             <constraint firstItem="Alt-qX-TxT" firstAttribute="centerX" secondItem="Gr9-Ra-ehf" secondAttribute="centerX" id="mL0-pB-kaD"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="currencyLabel" destination="Gr9-Ra-ehf" id="OsS-zd-dqF"/>
+                                            <outlet property="valueLabel" destination="Alt-qX-TxT" id="XU8-dG-pXP"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Z5P-Sz-RqE"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BeG-61-mM2"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,6 +102,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ays-a0-N4k" id="Mrf-4Q-bC6"/>
+                        <outlet property="currencyButton" destination="0HQ-nd-lUQ" id="wmE-b7-5fh"/>
+                        <outlet property="inputTextfield" destination="1rx-Jt-vSe" id="HxL-BO-T31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
