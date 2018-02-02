@@ -17,6 +17,6 @@ protocol RatesType {
 // Should match `http://fixer.io` API rate format
 struct FixerRates: RatesType, Codable {
     let base: String
-    let rates: [String: Double]
+    var rates: [String: Double]
     var retrieved: Date?
 }

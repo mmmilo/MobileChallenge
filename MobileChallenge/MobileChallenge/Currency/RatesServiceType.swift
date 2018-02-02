@@ -10,10 +10,40 @@ import Foundation
 import RxSwift
 
 protocol RatesServiceType {
+    func retrieveCache() -> RatesType?
+    func cacheRates(_ rates: RatesType)
     func getRates() -> Single<RatesType>
 }
 
-final class RatesService: RatesServiceType {
+private extension String {
+    static let RatesKey = "RatesKey"
+}
+
+final class FixerExchangeService: RatesServiceType {
+    func retrieveCache() -> RatesType? {
+        guard let data = UserDefaults.standard.data(forKey: .RatesKey) else { return nil }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        do {
+            let rates = try decoder.decode(FixerRates.self, from: data)
+            return rates
+        }
+        catch {
+            print ("Error \(error)")
+            return nil
+        }
+    }
+    
+    func cacheRates(_ rates: RatesType) {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        if let fixer = rates as? FixerRates {
+            if let encoded = try? encoder.encode(fixer) {
+                UserDefaults.standard.set(encoded, forKey: .RatesKey)
+            }
+        }
+    }
+    
     func getRates() -> Single<RatesType> {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -33,6 +63,8 @@ final class RatesService: RatesServiceType {
                 let decoder = JSONDecoder()
                 do {
                     rates = try decoder.decode(FixerRates.self, from: data)
+                    // Add the base rate to the list
+                    rates.rates[rates.base] = 1.0
                     rates.retrieved = Date()
                 }
                 catch {
