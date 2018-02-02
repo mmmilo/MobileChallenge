@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15428D9720220BCD00CC6448 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9620220BCD00CC6448 /* ViewModel.swift */; };
-		15428D9A20220FB600CC6448 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9920220FB600CC6448 /* RateTableViewCell.swift */; };
+		15428D9A20220FB600CC6448 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9920220FB600CC6448 /* RateCollectionViewCell.swift */; };
 		15428D9C202214AD00CC6448 /* RatesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9B202214AD00CC6448 /* RatesType.swift */; };
 		15428D9E202214D600CC6448 /* RatesServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15428D9D202214D600CC6448 /* RatesServiceType.swift */; };
 		15428DA22022BEC800CC6448 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15428DA02022BEC800CC6448 /* RxSwift.framework */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		15428D9620220BCD00CC6448 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		15428D9920220FB600CC6448 /* RateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		15428D9920220FB600CC6448 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		15428D9B202214AD00CC6448 /* RatesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesType.swift; sourceTree = "<group>"; };
 		15428D9D202214D600CC6448 /* RatesServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceType.swift; sourceTree = "<group>"; };
 		15428DA02022BEC800CC6448 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 				15428DA82022C6E600CC6448 /* Extensions */,
 				15428D9520220BBE00CC6448 /* Currency */,
 				154E8687202103480095DF85 /* AppDelegate.swift */,
-				15428D9920220FB600CC6448 /* RateTableViewCell.swift */,
+				15428D9920220FB600CC6448 /* RateCollectionViewCell.swift */,
 				154E8689202103480095DF85 /* ViewController.swift */,
 				15428D9620220BCD00CC6448 /* ViewModel.swift */,
 				154E868B202103480095DF85 /* Main.storyboard */,
@@ -209,7 +209,7 @@
 			files = (
 				154E868A202103480095DF85 /* ViewController.swift in Sources */,
 				15428D9C202214AD00CC6448 /* RatesType.swift in Sources */,
-				15428D9A20220FB600CC6448 /* RateTableViewCell.swift in Sources */,
+				15428D9A20220FB600CC6448 /* RateCollectionViewCell.swift in Sources */,
 				15428D9E202214D600CC6448 /* RatesServiceType.swift in Sources */,
 				15428DAA2022C70300CC6448 /* DateFormatters.swift in Sources */,
 				15428D9720220BCD00CC6448 /* ViewModel.swift in Sources */,
