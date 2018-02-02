@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var inputTextfield: UITextField!
     @IBOutlet weak var currencyButton: UIButton!
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel = ViewModel()
 

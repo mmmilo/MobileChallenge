@@ -106,6 +106,7 @@
                         <outlet property="collectionView" destination="ays-a0-N4k" id="Mrf-4Q-bC6"/>
                         <outlet property="currencyButton" destination="0HQ-nd-lUQ" id="wmE-b7-5fh"/>
                         <outlet property="inputTextfield" destination="1rx-Jt-vSe" id="HxL-BO-T31"/>
+                        <outlet property="lastUpdatedLabel" destination="5QY-vp-S2Z" id="2o8-rH-n1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
